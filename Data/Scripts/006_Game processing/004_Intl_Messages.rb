@@ -33,7 +33,8 @@ def pbSetTextMessages
       pbAddRgssScriptTexts(texts,scr)
     end
     # Se deben agregar mensajes porque este código es usado tanto en el sistema del juego como el Editor.
-    MessageTypes.addMessagesAsHash(MessageTypes::ScriptTexts,texts)
+    #MessageTypes.addMessagesAsHash(MessageTypes::ScriptTexts,texts)
+    MessageTypes.setMessagesAsHash(MessageTypes::ScriptTexts,texts)
     commonevents=pbLoadRxData("Data/CommonEvents")
     items=[]
     choices=[]
@@ -49,7 +50,7 @@ def pbSetTextMessages
           list = event.list[j]
           if neednewline && list.code!=401
             if lastitem!=""
-              lastitem.gsub!(/([^\.\!\?])\s\s+/){|m| $1+" "}
+              lastitem.gsub!(/([^\.\!\?])\s\s+/){|m| $1+" "}  
               items.push(lastitem)
               lastitem=""
             end         
@@ -203,7 +204,7 @@ def pbEachIntlSection(file)
          havesection=true
        else
          if sectionname==nil
-           raise _INTL("Se esperaba una identificación de sección al inicio del archivo (línea {1})",lineno)
+           raise _INTL("# Se esperaba una identificación de sección al inicio del archivo (línea {1})",lineno)
          end
          lastsection.push(line.gsub(/\s+$/,""))
        end
@@ -222,7 +223,7 @@ def pbGetText(infile)
   begin
     file=File.open(infile,"rb") 
   rescue
-    raise _INTL("No se pudo encontrar {1}",infile)
+    raise _INTL("# No se pudo encontrar {1}",infile)
   end
   intldat=[]
   begin
@@ -232,31 +233,46 @@ def pbGetText(infile)
          next
        end
        if !name[/^([Mm][Aa][Pp])?(\d+)$/]
-         raise _INTL("Nombre de sección inválido {1}",name)
+         raise _INTL("# Nombre de sección inválido {1}",name)
        end
        ismap=$~[1] && $~[1]!=""
        id=$~[2].to_i
-       itemlength=0
-       if section[0][/^\d+$/]
-         intlhash=[]
-         itemlength=3
-         if ismap
-           raise _INTL("La sección {1} no puede ser una lista ordenada (la sección ha sido interpretada como una lista ordenada porque su primer línea es un número)",name)
-         end
-         if section.length%3!=0
-           raise _INTL("La cuenta de líneas de la sección {1} no es divisible en 3 (la sección ha sido interpretada como una lista ordenada porque su primer línea es un número)",name)
-         end
-       else
-         intlhash=OrderedHash.new
-         itemlength=2
-         if section.length%2!=0
-           raise _INTL("La sección {1} tiene una cantidad extraña de entradas (la sección ha sido interpretada como una hash porque su primer línea no es un número)",name)
-         end
+       
+       # FORZAR tipos 19 y 20 como HASH siempre
+       force_hash = (id == 19 || id == 20)
+       
+       # Verificar si la primera línea es un número (para arrays)
+       is_numbered = false
+       if section[0] && section[0][/^\d+$/]
+         is_numbered = true
        end
-       i=0;loop do break unless i<section.length
-         if itemlength==3
+       
+       # Si es un tipo que debe ser hash, ignorar si parece array numerado
+       if force_hash
+         is_numbered = false
+       end
+       
+       itemlength = is_numbered ? 3 : 2
+       intlhash = is_numbered ? [] : OrderedHash.new
+       
+       if ismap && is_numbered
+         raise _INTL("# La sección {1} no puede ser una lista ordenada (la sección ha sido interpretada como una lista ordenada porque su primer línea es un número)",name)
+       end
+       
+       if is_numbered && section.length%3!=0
+         raise _INTL("# La cuenta de líneas de la sección {1} no es divisible en 3 (la sección ha sido interpretada como una lista ordenada porque su primer línea es un número)",name)
+       end
+       
+       if !is_numbered && section.length%2!=0
+         raise _INTL("# La sección {1} tiene una cantidad extraña de entradas (la sección ha sido interpretada como una hash porque su primer línea no es un número)",name)
+       end
+       
+       i=0
+       loop do 
+         break unless i<section.length
+         if is_numbered
            if !section[i][/^\d+$/]
-             raise _INTL("Se esperaba un número en la sección {1}, en su lugar se obtuvo {2}",name,section[i])
+             raise _INTL("# Se esperaba un número en la sección {1}, en su lugar se obtuvo {2}",name,section[i])
            end
            key=section[i].to_i
            i+=1
@@ -266,6 +282,7 @@ def pbGetText(infile)
          intlhash[key]=MessageTypes.denormalizeValue(section[i+1])
          i+=2
        end
+       
        if ismap
          intldat[0]=[] if !intldat[0]
          intldat[0][id]=intlhash
@@ -790,8 +807,8 @@ end
 # Necesita que LANGUAGES en Settings este configurado correctamente.
 ################################################################################################
 module MessageTypes
-  
-  CORE_TYPES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13]
+
+  CORE_TYPES = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 19, 20]
   
   TYPE_NAMES = {
     0 => "EVENT_TEXTS",
@@ -834,10 +851,17 @@ module MessageTypes
   def self.getTypeName(type)
     return TYPE_NAMES[type] ? TYPE_NAMES[type] : "Type#{type}"
   end
+
+  def self.getTypeId(name)
+    TYPE_NAMES.each do |k, v|
+      return k if v.downcase == name.to_s.downcase
+    end
+    return -1
+  end
 end
 
 class Messages
-  def self.writeTypeToFile(f, msgs, secname, origMessages=nil, omitIndex=false)
+  def self.writeTypeToFile(f, msgs, secname, origMessages=nil)
     return if !msgs
     if msgs.is_a?(Array)
       f.write("[#{secname}]\r\n")
@@ -850,9 +874,7 @@ class Messages
         else
           origValue = Messages.normalizeValue(MessageTypes.get(secname, j))
         end
-        if !omitIndex
-          f.write("#{j}\r\n")
-        end
+        # Formato v21: No escribe indices numericos, usa el texto original como clave
         f.write(origValue + "\r\n")
         f.write(value + "\r\n")
       end
@@ -923,7 +945,7 @@ module MessageTypes
   end
 end
 
-# Función para compilar desde directorios
+# Función para compilar desde directorios sin requerir números en los .txt (Lógica v21 sobre v16)
 def pbCompileFromFolders(folders, outfile = "intl.dat")
   intldat = []
   processedFiles = []
@@ -953,69 +975,82 @@ def pbCompileFromFolders(folders, outfile = "intl.dat")
         fileData = pbGetText(filepath)
         processedFiles.push(filepath)
         
-        # Combinar datos
-        if fileData[0] # Map messages
-          intldat[0] = [] if !intldat[0]
-          for i in 0...fileData[0].length
-            if fileData[0][i]
-              intldat[0][i] = fileData[0][i]
-            end
-          end
-        end
-        
-        # Otros tipos de mensajes
-        for i in 1...fileData.length
-          if fileData[i]
-            # Si es un tipo indexado y los datos vienen sin índices, reconstruirlos
-            if MessageTypes.isIndexedType?(i) && fileData[i].is_a?(OrderedHash)
-              if origMessages && origMessages.messages[i]
-                # Crear un mapeo de texto original -> ID
-                origArray = origMessages.messages[i]
-                textToId = {}
+        for i in 0...fileData.length
+          next if !fileData[i]
+
+          # --- EVENTOS DE MAPA (Tipo 0) ---
+          if i == 0 
+            intldat[0] = [] if !intldat[0]
+            if fileData[0].is_a?(Array)
+              for map_id in 0...fileData[0].length
+                next if !fileData[0][map_id]
+                intldat[0][map_id] = OrderedHash.new if !intldat[0][map_id]
                 
-                for j in 0...origArray.length
-                  if !nil_or_empty?(origArray[j])
-                    key = Messages.stringToKey(origArray[j])
-                    textToId[key] = j
-                  end
+                fileData[0][map_id].keys.each do |k|
+                  norm_key = Messages.stringToKey(k)
+                  intldat[0][map_id][norm_key] = fileData[0][map_id][k]
                 end
-                
-                # Reconstruir array usando el mapeo
-                rebuiltArray = []
-                hashKeys = fileData[i].keys
-                
-                for key in hashKeys
-                  if textToId[key]
-                    rebuiltArray[textToId[key]] = fileData[i][key]
-                  end
-                end
-                
-                intldat[i] = rebuiltArray
-              else
-                # Sin datos originales, convertir OrderedHash a Array denso
-                arr = []
-                index = 0
-                fileData[i].keys.each { |key|
-                  arr[index] = fileData[i][key]
-                  index += 1
-                }
-                intldat[i] = arr
               end
-            else
-              intldat[i] = fileData[i]
             end
+
+          # --- TIPOS INDEXADOS (MAP_NAMES, REGION_LOCATION_NAMES, MAPAS, OBJETOS, ETC) ---
+          elsif MessageTypes.isIndexedType?(i) && fileData[i].is_a?(OrderedHash)
+            if origMessages && origMessages.messages[i]
+              origArray = origMessages.messages[i]
+              
+              # 1. Crear mapeo de Texto Original Normalizado -> Array de IDs donde aparece
+              textToIds = {}
+              for j in 0...origArray.length
+                next if nil_or_empty?(origArray[j])
+                key = Messages.stringToKey(origArray[j])
+                textToIds[key] ||= []
+                textToIds[key].push(j)
+              end
+              
+              # 2. Reconstruir Array denso asignando el texto traducido a cada ID correspondiente
+              rebuiltArray = []
+              fileData[i].keys.each do |k|
+                norm_key = Messages.stringToKey(k)
+                ids = textToIds[norm_key]
+                if ids
+                  ids.each do |id|
+                    rebuiltArray[id] = fileData[i][k]
+                  end
+                end
+              end
+              intldat[i] = rebuiltArray
+            else
+              # Si no hay messages.dat, fallback secuencial por posición
+              arr = []
+              index = 0
+              fileData[i].keys.each { |key|
+                arr[index] = fileData[i][key]
+                index += 1
+              }
+              intldat[i] = arr
+            end
+
+          # --- TIPOS BASADOS EN HASH (SCRIPT_TEXTS, ETC) ---
+          elsif fileData[i].is_a?(OrderedHash) || i == 19 || i == 20
+            intldat[i] = OrderedHash.new if !intldat[i]
+            fileData[i].keys.each do |k|
+              norm_key = Messages.stringToKey(k)
+              intldat[i][norm_key] = fileData[i][k]
+            end
+          else
+            intldat[i] = fileData[i]
           end
         end
       rescue
-        raise _INTL("Error al procesar {1}: {2}", filepath, $!.message)
+        raise _INTL("# Error al procesar {1}: {2}", filepath, $!.message)
       end
     end
   end
   
   if processedFiles.length == 0
-    raise _INTL("No se encontraron archivos de traducción en las carpetas especificadas")
+    raise _INTL("# No se encontraron archivos de traducción en las carpetas especificadas")
   end
-  
+
   # Guardar archivo combinado
   File.open(outfile, "wb") { |f|
     Marshal.dump(intldat, f)
@@ -1053,10 +1088,10 @@ def pbExtractTextByType
   Kernel.pbDisposeMessageWindow(msgwindow)
   
   options = [
-    _INTL("Solo Core"),
-    _INTL("Solo Game"),
-    _INTL("Ambos"),
-    _INTL("Cancelar")
+    "Solo Core",
+    "Solo Game",
+    "Ambos",
+    "Cancelar"
   ]
   
   choice = Kernel.pbShowCommands(nil, options, -1)
@@ -1065,8 +1100,25 @@ def pbExtractTextByType
   extractCore = (choice == 0 || choice == 2)
   extractGame = (choice == 1 || choice == 2)
   
+  mapMode = 0 # 0: Unico archivo, 1: Mapa Individual, 2: Agrupado por Nombre
+  if extractGame
+    msgwindow = Kernel.pbCreateMessageWindow
+    Kernel.pbMessageDisplay(msgwindow, _INTL("¿Cómo deseas exportar los textos de los Mapas?"))
+    Kernel.pbDisposeMessageWindow(msgwindow)
+    
+    mapOptions = [
+      "Un solo archivo (EVENT_TEXTS.txt)",
+      "Mapas Individuales (Map [ID] [Nombre])",
+      "Agrupados por Nombre (Map [ID min] [Nombre])",
+      "Cancelar"
+    ]
+    mapChoice = Kernel.pbShowCommands(nil, mapOptions, -1)
+    return if mapChoice < 0 || mapChoice == 3
+    mapMode = mapChoice
+  end
+
   msgwindow = Kernel.pbCreateMessageWindow
-  Kernel.pbMessageDisplay(msgwindow, _INTL("Por favor, espera.\\wtnp[0]"))
+  Kernel.pbMessageDisplay(msgwindow, _INTL("Por favor, espera...\\wtnp[0]"))
   
   begin
     origMessages = Messages.new("Data/messages.dat")
@@ -1077,27 +1129,74 @@ def pbExtractTextByType
     
     Dir.mkdir(coreFolderName) rescue nil if extractCore
     Dir.mkdir(gameFolderName) rescue nil if extractGame
-    
+
     # Extraer mensajes de mapas (tipo 0) - va a Game
     if extractGame && origMessages.messages[0]
-      typeName = MessageTypes.getTypeName(0)
-      File.open("#{gameFolderName}/#{typeName}.txt", "wb") { |f|
-        f.write(0xef.chr)
-        f.write(0xbb.chr)
-        f.write(0xbf.chr)
-        f.write("# #{typeName}\r\n")
-        f.write("# To localize this text, translate every second line.\r\n")
-        
+      mapinfos = pbLoadRxData("Data/MapInfos") rescue nil
+      
+      if mapMode == 0
+        # 1. ARCHIVO ÚNICO
+        typeName = MessageTypes.getTypeName(0)
+        File.open("#{gameFolderName}/#{typeName}.txt", "wb") { |f|
+          f.write(0xef.chr); f.write(0xbb.chr); f.write(0xbf.chr)
+          f.write("# #{typeName}\r\n# To localize this text, translate every second line.\r\n")
+          
+          for i in 0...origMessages.messages[0].length
+            msgs = origMessages.messages[0][i]
+            if msgs && !msgs.empty?
+              Messages.writeTypeToFile(f, msgs, "Map#{i}", origMessages)
+            end
+          end
+        }
+      elsif mapMode == 1
+        # 2. ARCHIVOS INDIVIDUALES: Map [ID] [Nombre Ingame]
         for i in 0...origMessages.messages[0].length
           msgs = origMessages.messages[0][i]
-          if msgs && !msgs.empty?
+          next if !msgs || msgs.empty?
+          
+          mapName = (mapinfos && mapinfos[i]) ? mapinfos[i].name : "Mapa #{i}"
+          mapName = pbSanitizeFilename(mapName)
+          filename = sprintf("%s/Map %03d %s.txt", gameFolderName, i, mapName)
+          
+          File.open(filename, "wb") { |f|
+            f.write(0xef.chr); f.write(0xbb.chr); f.write(0xbf.chr)
+            f.write("# Map #{i}: #{mapName}\r\n")
             Messages.writeTypeToFile(f, msgs, "Map#{i}", origMessages)
-          end
+          }
         end
-      }
+      elsif mapMode == 2
+        # 3. AGRUPADOS POR NOMBRE INGAME: Map [ID_Max] [Nombre Ingame]
+        mapsByName = {}
+        for i in 0...origMessages.messages[0].length
+          msgs = origMessages.messages[0][i]
+          next if !msgs || msgs.empty?
+          
+          rawName = (mapinfos && mapinfos[i]) ? mapinfos[i].name : "SinNombre"
+          sanName = pbSanitizeFilename(rawName)
+          mapsByName[sanName] ||= []
+          mapsByName[sanName].push(i)
+        end
+        
+        mapsByName.each do |sanName, mapIds|
+          mapIds.sort! # Ordenar los IDs de menor a mayor
+          maxId = mapIds.min # Obtener la ID más baja
+          
+          filename = sprintf("%s/Map %03d %s.txt", gameFolderName, maxId, sanName)
+          
+          File.open(filename, "wb") { |f|
+            f.write(0xef.chr); f.write(0xbb.chr); f.write(0xbf.chr)
+            f.write("# Maps grouped under: #{sanName} (Highest ID: #{maxId})\r\n")
+            
+            for mapId in mapIds
+              msgs = origMessages.messages[0][mapId]
+              Messages.writeTypeToFile(f, msgs, "Map#{mapId}", origMessages)
+            end
+          }
+        end
+      end
     end
     
-    # Extraer cada MessageType individualmente
+    # --- EXTRACCIÓN DE OTROS TIPOS ---
     for i in 1...origMessages.messages.length
       msgs = origMessages.messages[i]
       next if !msgs || msgs.empty?
@@ -1109,36 +1208,19 @@ def pbExtractTextByType
       typeName = MessageTypes.getTypeName(i)
       folder = isCore ? coreFolderName : gameFolderName
       filename = "#{folder}/#{typeName}.txt"
-      omitIndex = MessageTypes.isIndexedType?(i)
       
       File.open(filename, "wb") { |f|
-        f.write(0xef.chr)
-        f.write(0xbb.chr)
-        f.write(0xbf.chr)
+        f.write(0xef.chr); f.write(0xbb.chr); f.write(0xbf.chr)
         f.write("# #{typeName}\r\n")
         f.write("# To localize this text, translate every second line.\r\n")
         
-        Messages.writeTypeToFile(f, msgs, i, origMessages, omitIndex)
+        Messages.writeTypeToFile(f, msgs, i, origMessages)
       }
     end
     
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Los textos se extrajeron exitosamente.\1"))
-    if extractCore
-      Kernel.pbMessageDisplay(msgwindow,
-        _INTL("{1}: Datos de Pokémon (especies, movimientos, objetos, etc.).\1", coreFolderName))
-    end
-    if extractGame
-      Kernel.pbMessageDisplay(msgwindow,
-        _INTL("{1}: Datos del juego (entrenadores, diálogos, mapas, etc.).\1", gameFolderName))
-    end
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Traduce las segundas líneas de cada par en los archivos.\1"))
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Luego elige \"Compilar Texto desde Carpetas.\""))
+    Kernel.pbMessageDisplay(msgwindow, "Los textos se extrajeron exitosamente.")
   rescue
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Error al extraer texto: {1}", $!.message))
+    Kernel.pbMessageDisplay(msgwindow, _INTL("# Error al extraer texto: {1}", $!.message))
   end
   
   Kernel.pbDisposeMessageWindow(msgwindow)
@@ -1146,9 +1228,8 @@ end
 
 # Función UI para compilar desde carpetas
 def pbCompileTextFromFoldersUI
-  # Seleccionar idioma
   if !defined?(LANGUAGES) || !LANGUAGES
-    Kernel.pbMessage(_INTL("No se encontró la configuración de LANGUAGES."))
+    Kernel.pbMessage("No se encontró la configuración de LANGUAGES.")
     return
   end
   
@@ -1158,7 +1239,7 @@ def pbCompileTextFromFoldersUI
   end
   
   msgwindow = Kernel.pbCreateMessageWindow
-  Kernel.pbMessageDisplay(msgwindow, _INTL("Selecciona el idioma a compilar:"))
+  Kernel.pbMessageDisplay(msgwindow, "Selecciona el idioma a compilar:")
   Kernel.pbDisposeMessageWindow(msgwindow)
   
   langIndex = Kernel.pbShowCommands(nil, langNames, -1)
@@ -1174,7 +1255,7 @@ def pbCompileTextFromFoldersUI
   end
   
   msgwindow = Kernel.pbCreateMessageWindow
-  Kernel.pbMessageDisplay(msgwindow, _INTL("Por favor, espera.\\wtnp[0]"))
+  Kernel.pbMessageDisplay(msgwindow, "Por favor, espera.\\wtnp[0]")
   
   begin
     coreFolderName = "Text_#{langCode}_core"
@@ -1185,10 +1266,7 @@ def pbCompileTextFromFoldersUI
     folders.push(gameFolderName) if FileTest.directory?(gameFolderName)
     
     if folders.length == 0
-      Kernel.pbMessageDisplay(msgwindow,
-        _INTL("No se encontraron las carpetas {1} o {2}.\1", coreFolderName, gameFolderName))
-      Kernel.pbMessageDisplay(msgwindow,
-        _INTL("Asegúrate de haber extraído los textos primero."))
+      Kernel.pbMessageDisplay(msgwindow, "No se encontraron carpetas.")
       Kernel.pbDisposeMessageWindow(msgwindow)
       return
     end
@@ -1197,20 +1275,49 @@ def pbCompileTextFromFoldersUI
     outputPath = "Data/#{outputFile}"
     fileCount = pbCompileFromFolders(folders, outputPath)
     
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Texto compilado exitosamente desde {1} archivo(s).", fileCount))
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("El archivo {1} se guardó en la carpeta Data.", outputFile))
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Idioma: {1}", selectedLang))
-    if outputFile != "intl.dat"
-      Kernel.pbMessageDisplay(msgwindow,
-        _INTL("Este archivo ya está configurado en LANGUAGES y se cargará automáticamente."))
-    end
+    Kernel.pbMessageDisplay(msgwindow, _INTL("# Texto compilado exitosamente desde {1} archivo(s).", fileCount))
   rescue RuntimeError
-    Kernel.pbMessageDisplay(msgwindow,
-      _INTL("Fallo al compilar el texto: {1}", $!.message))
+    Kernel.pbMessageDisplay(msgwindow, _INTL("# Fallo al compilar el texto: {1}", $!.message))
   end
   
   Kernel.pbDisposeMessageWindow(msgwindow)
+end
+
+module MessageTypes
+  def self.cleanScriptTexts
+    # Eliminar todos los textos de scripts actuales
+    @@messages.setMessagesAsHash(ScriptTexts, [])
+    # Regenerar desde cero
+    pbSetTextMessages
+  end
+end
+
+# Helper para limpiar nombres de mapa: elimina tildes, caracteres raros y símbolos no válidos para Windows
+def pbSanitizeFilename(filename)
+  name = filename.clone
+  
+  # 1. Cortar subzonas si existe " - " (ej: "Monte Mortero - Sotano" -> "Monte Mortero")
+  name = name.split(/\s+-\s+/)[0] if name.include?(" - ") || name.include?("-")
+  
+  # Sustitución de caracteres con tildes y especiales comunes
+  accent_map = {
+    /[áàäâã]/i => "a",
+    /[éèëê]/i  => "e",
+    /[íìïî]/i  => "i",
+    /[óòöôõ]/i => "o",
+    /[úùüû]/i  => "u",
+    /[ñ]/i     => "n",
+    /[ç]/i     => "c"
+  }
+  accent_map.each { |regex, replacement| name.gsub!(regex, replacement) }
+  
+  # Reemplazar cualquier carácter que NO sea letra, número, espacio o guion por guion bajo
+  name.gsub!(/[^0-9a-zA-Z\s\-_]/, "_")
+  
+  # Limpiar espacios y guiones bajos duplicados
+  name.gsub!(/\s+/, " ")
+  name.gsub!(/_+/, "_")
+  name.strip!
+  
+  return name.empty? ? "000" : name
 end

@@ -5,7 +5,7 @@
 5,STURDY,Robustez,"Evita que el rival pueda debilitarlo de un solo golpe cuando tiene los PS al máximo."
 6,DAMP,Humedad,"Aumenta la humedad del entorno y evita que se puedan utilizar movimientos explosivos."
 7,LIMBER,Flexibilidad,"Evita ser paralizado gracias a la flexibilidad de su cuerpo."
-8,SANDVEIL,Velo arena,"Aumenta la Evasión durante las tormentas de arena."
+8,SANDVEIL,Velo de Arena,"Aumenta la Evasión durante las tormentas de arena."
 9,STATIC,Elec. Estática,"La electricidad estática que lo envuelve puede paralizar al mínimo contacto."
 10,VOLTABSORB,Absorbe Elec.,"Si le alcanza un movimiento de tipo Eléctrico, recupera PS en vez de sufrir daño."
 11,WATERABSORB,Absorbe Agua,"Si le alcanza un movimiento de tipo Agua, recupera PS en vez de sufrir daño."
@@ -20,7 +20,7 @@
 20,OWNTEMPO,Ritmo Propio,"Como le gusta hacer las cosas a su manera, los rivales no logran confundirlo."
 21,SUCTIONCUPS,Ventosas,"Sus ventosas se aferran al suelo, con lo cual anula movimientos y objetos que fuerzan el relevo."
 22,INTIMIDATE,Intimidación,"Al entrar en combate amilana al rival de tal manera que su Ataque disminuye."
-23,SHADOWTAG,Sombratrampa,"Evita que el enemigo huya o sea cambiado por otro."
+23,SHADOWTAG,Sombra Trampa,"Evita que el enemigo huya o sea cambiado por otro."
 24,ROUGHSKIN,Piel Tosca,"Hiere con su piel áspera al rival que lo ataque con un movimiento de contacto."
 25,WONDERGUARD,Superguarda,"Gracias a un poder misterioso, solo le hacen daño los movimientos supereficaces."
 26,LEVITATE,Levitación,"Su capacidad de flotar sobre el suelo le proporciona inmunidad frente a los movimientos de tipo Tierra."
@@ -113,7 +113,7 @@
 113,SCRAPPY,Intrépido,"Los movimientos de tipo Normal o Lucha alcanzan a los Pokémon de tipo Fantasma."
 114,STORMDRAIN,Colector,"Además de atraer y neutralizar los movimientos de tipo Agua, sube el Ataque Especial."
 115,ICEBODY,Gélido,"Recupera PS de forma gradual cuando hay tormentas de granizo."
-116,SOLIDROCK,Roca Solida,"Mitiga el daño que le infligen los movimientos supereficaces."
+116,SOLIDROCK,Roca Sólida,"Mitiga el daño que le infligen los movimientos supereficaces."
 117,SNOWWARNING,Nevada,"El Pokémon invoca una tormenta de granizo al entrar en combate."
 118,HONEYGATHER,Recogemiel,"Es posible que el Pokémon encuentre Miel una vez concluido el combate."
 119,FRISK,Cacheo,"El Pokémon puede ver el objeto que lleva el rival al entrar en combate."
@@ -311,7 +311,7 @@
 309,TERASHELL,Teracaparazón,"Su caparazón encierra energía de todos los tipos. Gracias a ello, si sus PS están al máximo, el movimiento que lo alcance no será muy eficaz." #TODO
 310,TERAFORMZERO,Teraformación 0,"Cuando Terapagos adopta la Forma Astral, anula todos los efectos del tiempo atmosférico y de los campos que haya en el terreno gracias a su poder oculto." #TODO
 311,DRAGONIZE,Piel Dragontina,"Convierte los movimientos de tipo Normal en tipo Dragón y aumenta ligeramente su potencia."
-312,MEGASOL,Mega Solar,"Permite que el Pokémon use sus movimientos como si el clima fuera Soleado." #Desc provisional hasta Champions
+312,MEGASOL,Megasolar,"Permite que el Pokémon use sus movimientos como si el clima fuera Soleado." #Desc provisional hasta Champions
 313,SPICYSPRAY,Salpicante,"Quema al ser alcanzado por cualquier movimiento." #Desc provisional hasta Champions
 314,PIERCINGDRILL,Turbotaladro,"Permite golpear objetivos protegidos infligiendo 1/4 del daño con movimientos de contacto." #Desc provisional hasta Champions
 315,EELEVATE,Impulso Anguila,"Da inmunidad a los movimientos de tipo Tierra y si el Pokémon derrota a un rival en ese turno, aumenta su característica más fuerte."

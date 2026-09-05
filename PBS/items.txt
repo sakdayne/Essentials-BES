@@ -25,7 +25,7 @@
 25,PNKAPRICORN,Bonguri Rosa,Bonguris Rosas,1,200,"Bonguri de color rosa y aroma dulce.",0,0,0,
 26,WHTAPRICORN,Bonguri Blanco,Bonguris Blancos,1,200,"Bonguri de color blanco que no desprende aroma alguno.",0,0,0,
 27,BLKAPRICORN,Bonguri Negro,Bonguris Negros,1,200,"Bonguri de color negro y aroma indescriptible.",0,0,0,
-28,HELIXFOSSIL,Fósil Helix,Fósiles Helix,1,1000,"Fósil de un Pokémon ancestral que vivió en el fondo del mar. Parece ser un fragmento de concha marina.",0,0,0,
+28,HELIXFOSSIL,Fósil Hélix,Fósiles Hélix,1,1000,"Fósil de un Pokémon ancestral que vivió en el fondo del mar. Parece ser un fragmento de concha marina.",0,0,0,
 29,DOMEFOSSIL,Fósil Domo,Fósiles Domo,1,1000,"Fósil de un Pokémon ancestral que vivió en el fondo del mar. Parece ser un fragmento de concha.",0,0,0,
 30,OLDAMBER,Ámbar Viejo,Ámbares Viejos,1,1000,"Fragmento de ámbar que contiene información genética de un Pokémon ancestral. Es de color amarillo.",0,0,0,
 31,ROOTFOSSIL,Fósil Raíz,Fósiles Raíz,1,1000,"Fósil de un Pokémon ancestral que vivió en el fondo del mar. Parece ser parte de una raíz.",0,0,0,
@@ -40,14 +40,14 @@
 40,BALMMUSHROOM,Seta Aroma,Setas Aroma,1,50000,"Extraña seta que desprende un agradable aroma. Muy apreciada por los gourmets.",0,0,0,
 41,PEARL,Perla,Perlas,1,1400,"Brillante perla plateada de tamaño más bien pequeño que no alcanza mucho precio en las tiendas.",0,0,0,
 42,BIGPEARL,Perla Grande,Perlas Grandes,1,7500,"Brillante perla plateada de gran tamaño que puede venderse a buen precio en las tiendas.",0,0,0,
-43,PEARLSTRING,Sarta Perlas,Sartas Perlas,1,50000,"Brillantes perlas plateadas de gran tamaño. Muy valoradas por los coleccionistas.",0,0,0,
+43,PEARLSTRING,Sarta de Perlas,Sartas Perlas,1,50000,"Brillantes perlas plateadas de gran tamaño. Muy valoradas por los coleccionistas.",0,0,0,
 44,STARDUST,Polvo Estelar,Polvos Estelares,1,2000,"Bonita arena roja de tacto sedoso que alcanza un alto precio en las tiendas.",0,0,0,
-45,STARPIECE,Trozo Estrella,Trozos Estrella,1,9800,"Fragmento de una bonita gema roja que puede venderse muy caro en las tiendas.",0,0,0,
-46,COMETSHARD,Fragmento Cometa,Fragmentos Cometa,1,120000,"Fragmento de un cometa caído al suelo al atravesar la atmósfera. Muy valorado por los coleccionistas.",0,0,0,
+45,STARPIECE,Trozo de Estrella,Trozos Estrella,1,9800,"Fragmento de una bonita gema roja que puede venderse muy caro en las tiendas.",0,0,0,
+46,COMETSHARD,Fragmento de Cometa,Fragmentos Cometa,1,120000,"Fragmento de un cometa caído al suelo al atravesar la atmósfera. Muy valorado por los coleccionistas.",0,0,0,
 47,NUGGET,Pepita de oro,Pepitas,1,10000,"Pepita de oro puro que desprende un brillo espectacular. Puede venderse muy cara en las tiendas.",0,0,0,
 48,BIGNUGGET,Maxipepita de oro,Maxipepitas,1,60000,"Pepita grande de oro puro que desprende un brillo espectacular. Muy valorada por los coleccionistas.",0,0,0,
 49,HEARTSCALE,Escama Corazón,Escamas Corazón,1,100,"Bella escama con forma de corazón que brilla con los colores del arco iris. Es muy poco común.",0,0,0,
-50,SLOWPOKETAIL,Cola Slowpoke,Colas Slowpoke,1,9800,"Cola de origen desconocido y muy sabrosa. Se vende muy cara.",0,0,0,
+50,SLOWPOKETAIL,Cola de Slowpoke,Colas Slowpoke,1,9800,"Cola de origen desconocido y muy sabrosa. Se vende muy cara.",0,0,0,
 51,RAREBONE,Hueso Raro,Huesos Raros,1,10000,"Un hueso de gran valor arqueológico que puede alcanzar un alto precio en las tiendas.",0,0,0,
 52,RELICCOPPER,Real de Cobre,Reales Cobre,1,2000,"Moneda de cobre de más de tres mil años de antigüedad. Muy valorada por los coleccionistas.",0,0,0,
 53,RELICSILVER,Real de Plata,Reales Plata,1,10000,"Moneda de plata de más de tres mil años de antigüedad. Muy valorada por los coleccionistas.",0,0,0,
@@ -98,7 +98,7 @@
 98,ABSORBBULB,Tubérculo,Tubérculos,1,200,"Raíz de usar y tirar que sube el Ataque Especial cuando se recibe un ataque de tipo Agua.",0,0,0,
 99,CELLBATTERY,Pila,Pilas,1,200,Batería de usar y tirar que sube el Ataque de quien la lleva cuando recibe un golpe de tipo Eléctrico.,0,0,0,
 100,LIFEORB,Vidasfera,Vidasferas,1,200,"Potencia los movimientos, pero consume PS con cada ataque. Debe llevarla un Pokémon.",0,0,0,
-101,EXPERTBELT,Cinta Experto,Cintas Experto,1,200,"Potencia ligeramente los movimientos supereficaces. Debe llevarla un Pokémon.",0,0,0,
+101,EXPERTBELT,Cinturón de Experto,Cintas Experto,1,200,"Potencia ligeramente los movimientos supereficaces. Debe llevarla un Pokémon.",0,0,0,
 102,METRONOME,Metrónomo,Metrónomos,1,200,"Potencia un movimiento que se use de forma consecutiva. Pero el efecto se pierde si se emplea otro movimiento.",0,0,0,
 103,MUSCLEBAND,Cinta Fuerte,Cintas Fuertes,1,200,"Cinta de pelo que aumenta ligeramente la potencia de los movimientos físicos. Debe llevarla un Pokémon.",0,0,0,
 104,WISEGLASSES,Gafas Especiales,Gafas Especiales,1,200,"Potencian ligeramente los movimientos especiales. Debe llevarlas un Pokémon.",0,0,0,
@@ -123,7 +123,7 @@
 123,POWERBELT,Cinto Recio,Cintos Recios,1,3000,"Ayuda a ganar Defensa al subir de nivel, pero reduce la Velocidad. Debe llevarlo un Pokémon.",0,0,0,
 124,POWERLENS,Lente Recia,Lentes Recias,1,3000,"Ayuda a ganar At. Esp. al subir de nivel, pero reduce la Velocidad. Debe llevarla un Pokémon.",0,0,0,
 125,POWERBAND,Banda Recia,Bandas Recias,1,3000,"Ayuda a ganar Def. Esp. al subir de nivel, pero reduce la Velocidad. Debe llevarla un Pokémon.",0,0,0,
-126,POWERANKLET,Franja Recia,Franjas Recias,1,3000,"Ayuda a ganar Velocidad al subir de nivel, pero reduce la Velocidad en combate. Debe llevarla un Pokémon.",0,0,0,
+126,POWERANKLET,Tobillera Recia,Tobilleras Recias,1,3000,"Ayuda a ganar Velocidad al subir de nivel, pero reduce la Velocidad en combate. Debe llevarla un Pokémon.",0,0,0,
 127,LAXINCENSE,Incienso Suave,Inciensos Suaves,1,9600,"Debe llevarlo un Pokémon. Su peculiar aroma reduce la precisión del rival.",0,0,0,
 128,FULLINCENSE,Incienso Lento,Inciensos Lentos,1,9600,"Exótica sustancia aromática que hace que el Pokémon que la lleva se mueva más despacio.",0,0,0,
 129,LUCKINCENSE,Incienso Duplo,Inciensos Duplo,1,9600,"Incienso de aroma exótico. Si el Pokémon que lo lleva participa en un combate, duplica las ganancias.",0,0,0,
@@ -146,9 +146,9 @@
 146,SILVERPOWDER,Polvo Plata,Polvos Plata,1,100,"Polvo de brillo argénteo que fortalece los ataques de tipo Bicho. Debe llevarlo un Pokémon.",0,0,0,
 147,HARDSTONE,Piedra Dura,Piedras Duras,1,100,"Debe llevarla un Pokémon. La robustez de la piedra fortalece los ataques de tipo Roca.",0,0,0,
 148,SPELLTAG,Hechizo,Hechizos,1,100,"Misterioso y oscuro objeto que refuerza los ataques de tipo Fantasma. Debe llevarlo un Pokémon.",0,0,0,
-149,DRAGONFANG,Colmillo Dragón,Colmillos Dragón,1,100,"Colmillo de gran dureza que refuerza los ataques de tipo Dragón. Debe llevarlo un Pokémon.",0,0,0,
+149,DRAGONFANG,Colmillo de Dragón,Colmillos Dragón,1,100,"Colmillo de gran dureza que refuerza los ataques de tipo Dragón. Debe llevarlo un Pokémon.",0,0,0,
 150,BLACKGLASSES,Gafas de Sol,Gafas de Sol,1,100,"Debe llevarlas un Pokémon. Fortalecen los ataques de tipo Siniestro.",0,0,0,
-151,METALCOAT,Revestim. Metálico,Revestim. Metálicos,1,100,"Película metálica que fortalece los ataques de tipo Acero. Debe llevarlo un Pokémon.",1,0,0,
+151,METALCOAT,Revestimiento Metálico,Revestimiento Metálico,1,100,"Película metálica que fortalece los ataques de tipo Acero. Debe llevarlo un Pokémon.",1,0,0,
 152,SILKSCARF,Pañuelo de seda,Pañuelos de seda,1,100,"La delicadeza del pañuelo fortalece los ataques de tipo Normal. Debe llevarlo un Pokémon.",0,0,0,
 153,FLAMEPLATE,Tabla Llama,Tablas Llama,1,0,"Tabla de piedra que potencia los movimientos de tipo Fuego. Debe llevarla un Pokémon.",0,0,0,
 154,SPLASHPLATE,Tabla Linfa,Tablas Linfa,1,0,"Tabla de piedra que potencia los movimientos de tipo Agua. Debe llevarla un Pokémon.",0,0,0,
@@ -200,7 +200,7 @@
 200,BURNDRIVE,PiroROM,PiroROM,1,1000,"Cartucho que convierte Tecno Shock de Genesect en un movimiento de tipo Fuego.",0,0,0,
 201,CHILLDRIVE,CrioROM,CrioROM,1,1000,"Cartucho que convierte Tecno Shock de Genesect en un movimiento de tipo Hielo.",0,0,0,
 202,EVERSTONE,Piedra Eterna,Piedras Eternas,1,200,"El Pokémon que lleve esta piedra mágica no evolucionará.",0,0,0,
-203,DRAGONSCALE,Escama Dragón,Escamas Dragón,1,2100,"Una gruesa y resistente escama que pueden llevar los Pokémon de tipo Dragón cuando son capturados.",1,0,0,
+203,DRAGONSCALE,Escama de Dragón,Escamas Dragón,1,2100,"Una gruesa y resistente escama que pueden llevar los Pokémon de tipo Dragón cuando son capturados.",1,0,0,
 204,UPGRADE,Mejora,Mejoras,1,2100,"Peculiar dispositivo fabricado en Silph S.A. que contiene todo tipo de datos.",1,0,0,
 205,DUBIOUSDISC,Disco Extraño,Discos Extraños,1,2100,"Dispositivo transparente que contiene datos misteriosos. Es de fabricante desconocido.",1,0,0,
 206,PROTECTOR,Protector,Protectores,1,2100,"Dispositivo de protección muy pesado. Algunos Pokémon lo adoran.",1,0,0,
@@ -503,7 +503,7 @@
 498,YELLOWFLUTE,Flauta Amarilla,Flautas Amarillas,7,200,"Flauta de cristal amarillo que espabila a los Pokémon confusos.",0,2,0,
 499,REDFLUTE,Flauta Roja,Flautas Rojas,7,300,"Flauta de cristal rojo que libera a un Pokémon del enamoramiento.",0,2,0,
 500,POKEDOLL,Pokémuñeco,Pokémuñecos,7,1000,"Un muñeco que atrae a los Pokémon. Puedes utilizarlo para huir de un combate con un Pokémon salvaje.",0,2,0,
-501,FLUFFYTAIL,Cola Skitty,Colas Skitty,7,1000,"Atrae a los Pokémon y sirve para huir de un combate con un Pokémon salvaje.",0,2,0,
+501,FLUFFYTAIL,Cola de Skitty,Colas Skitty,7,1000,"Atrae a los Pokémon y sirve para huir de un combate con un Pokémon salvaje.",0,2,0,
 502,POKETOY,Pokéseñuelo,Pokéseñuelos,7,500,"Un objeto que atrae a los Pokémon. Puedes utilizarlo para huir de un combate con un Pokémon salvaje.",0,2,0,
 503,BICYCLE,Bici,Bicis,8,0,"Bicicleta plegable con la que se va más rápido que con deportivas.",2,0,6,
 504,OLDROD,Caña Vieja,Cañas Viejas,8,0,"Una caña de pescar bastante usada y desgastada. Pesca Pokémon salvajes en todo tipo de aguas.",2,0,6,
@@ -513,9 +513,9 @@
 508,DOWSINGMACHINE,Zahorí,Zahoríes,8,0,"Aparato de precisión que reacciona con luz y sonido ante los objetos que no se ven e indica su posición.",2,0,6,
 509,POKERADAR,Poké Radar,Poké Radares,8,0,"Busca Pokémon que se esconden en la hierba. La batería se recarga mientras caminas.",2,0,6,
 510,TOWNMAP,Mapa,Mapas,8,0,"Un mapa que puede consultarse en cualquier momento y que te indica dónde te encuentras.",2,0,6,
-511,POKEFLUTE,Poké Flauta,Poké Flautas,8,7000,"Consigue despertar al instante a cualquier Pokémon y suena de maravilla.",5,3,6,
+511,POKEFLUTE,Pokéflauta,Pokéflautas,8,7000,"Consigue despertar al instante a cualquier Pokémon y suena de maravilla.",5,3,6,
 512,COINCASE,Monedero,Monederos,8,0,"Caña pequeña para guardar fichas.",2,0,6,
-513,SOOTSACK,Saco Hollín,Sacos Hollín,8,0,"Un saco grande y resistente utilizado para transportar la ceniza volcánicaa.",0,0,6,
+513,SOOTSACK,Saco de Hollín,Sacos de Hollín,8,0,"Un saco grande y resistente utilizado para transportar la ceniza volcánicaa.",0,0,6,
 514,SILPHSCOPE,Visor Silph,Visores Silph,8,0,"Dispositivo hecho en SILPH S.A para ver Pokémon invisibles.",0,0,6,
 515,DEVONSCOPE,Detector Devon,Detectores Devon,8,0,"Dispositivo hecho en DEVON para ver Pokémon invisibles.",0,0,6,
 516,SQUIRTBOTTLE,Squirgadera,Squirgaderas,8,0,"Una regadera con forma de Squirtle. Ayuda a que las bayas plantadas en tierra suelta crezcan mejor.",0,0,6,
@@ -582,15 +582,15 @@
 576,REDORB,Prisma Rojo,Prismas Rojos,1,0,"Piedra carmesí de la que se dice que guarda una estrecha relación con las leyendas de Hoenn.",0,0,0,
 577,BLUEORB,Prisma Azul,Prismas Azules,1,0,"Piedra añil que, según dicen, guarda una estrecha relación con las leyendas de Hoenn.",0,0,0,
 
-578,MEGARING,Mega Aro,Mega Aros,8,0,"Aro que sirve para activar el poder de la Mega Evolución.",0,0,6,
-579,PRISONBOTTLE,Vasija Castigo,Vasijas Castigo,8,0,"Vasija en la que se halla confinado el poder de cierto Pokémon desde hace mucho tiempo.",5,0,6,
+578,MEGARING,Megaaro,Megaaros,8,0,"Aro que sirve para activar el poder de la Mega Evolución.",0,0,6,
+579,PRISONBOTTLE,Vasija de Castigo,Vasijas Castigo,8,0,"Vasija en la que se halla confinado el poder de cierto Pokémon desde hace mucho tiempo.",5,0,6,
 580,ABILITYCAPSULE,Cápsula Habilidad,Cápsulas Habilidad,1,10000,"Cápsula que les permite cambiar de habilidad a los Pokémon que poseen dos.",1,0,0,
-581,LUMIOSEGALETTE,Crêpe Luminalia,Crêpes Luminalia,2,1000,"Postre típico de Ciudad Luminalia. Cura los problemas de estado de un Pokémon.",1,1,0,
+581,LUMIOSEGALETTE,Galette Luminalia,Galettes Luminalia,2,1000,"Postre típico de Ciudad Luminalia. Cura los problemas de estado de un Pokémon.",1,1,0,
 582,SNOWBALL,Bola de Nieve,Bolas de Nieve,1,200,"Objeto de un solo uso. Aumenta el Ataque del Pokémon que lo lleva si este recibe un ataque de tipo hielo.",0,0,0,
 583,LUMINOUSMOSS,Musgo Brillante,Musgos Brillantes,1,200,"Objeto de un solo uso. Aumenta la Def. Esp. del Pokémon que la lleva si este recibe un ataque de tipo agua.",0,0,0,
 584,FAIRYGEM,Gema Hada,Gemas Hada,1,200,"Joya de un solo uso que potencia los movimientos de tipo Hada. Debe llevarla un Pokémon.",0,0,0,
 585,PIXIEPLATE,Tabla Duende,Tablas Duende,1,0,"Tabla de piedra que potencia los movimientos de tipo hada. Debe llevarla un Pokémon.",0,0,0,
-586,WEAKNESSPOLICY,Seguro Debilidad,Seguros Debilidad,1,1000,"Aumenta mucho el Atq. y el At. Esp. cuando el Pokémon que lo lleva recibe un ataque frente al cual es débil",0,0,0,
+586,WEAKNESSPOLICY,Seguro de Debilidad,Seguros Debilidad,1,1000,"Aumenta mucho el Atq. y el At. Esp. cuando el Pokémon que lo lleva recibe un ataque frente al cual es débil",0,0,0,
 587,JAWFOSSIL,Fósil Mandíbula,Fósiles Mandíbula,1,1000,"Fósil de un Pokémon prehistórico terrestre. Parece ser parte de una mandíbula.",0,0,0,
 588,SAILFOSSIL,Fósil Aleta,Fósiles Aleta,1,1000,"Fósil de un Pokémon prehistórico marino. Parece ser parte de una aleta.",0,0,0,
 589,MARANGABERRY,Baya Maranga,Bayas Maranga,5,20,"Aumenta la defensa especial cuando el Pokémon recibe un ataque especial.",0,0,5,
@@ -606,14 +606,14 @@
 599,HEAVYDUTYBOOTS,Botas Gruesas,Botas Gruesas,1,100,"Anula los efectos de aquello que se coloca a los pies del Pokémon para obstaculizarlo, como las trampas.",0,0,0,
 600,ROOMSERVICE,Servicio Raro,Servicios Raros,1,100,"Si lo lleva un Pokémon, reduce la Velocidad cuando se usa Espacio Raro.",0,0,0,
 601,EJECTPACK,Mochila Escape,Mochilas Escape,1,100,"Si el portador ve reducidas sus características, será sustituido por otro Pokémon del equipo.",0,0,0,
-602,BLUNDERPOLICY,Seguro Fallo,Seguros Fallo,1,100,"Aumenta mucho la Velocidad cuando el Pokémon erra el movimiento debido a la precisión.",0,0,0,
+602,BLUNDERPOLICY,Seguro de Fallo,Seguros Fallo,1,100,"Aumenta mucho la Velocidad cuando el Pokémon erra el movimiento debido a la precisión.",0,0,0,
 603,THROATSPRAY,Espray Bucal,Espráis Bucales,1,100,"Aumenta el Ataque Especial al emplear un movimiento que se sirva del sonido.",0,0,0,
 604,GALARICACUFF,Brazal Galanuez,Brazales Galanuez,1,100,"Un brazalete hecho de Ramas de Galanuez trenzadas. Los Slowpoke de Galar lo adoran.",1,0,0,
-605,EXPCANDYXS,Caramelo Exp. XS,Caramelos Exp. XS,2,20,"Caramelo energético que aumenta ligerísimamente los Puntos de Experiencia de un Pokémon.",1,0,0,
-606,EXPCANDYS,Caramelo Exp. S,Caramelos Exp. S,2,240,"Caramelo energético que aumenta ligeramente los Puntos de Experiencia de un Pokémon.",1,0,0,
-607,EXPCANDYM,Caramelo Exp. M,Caramelos Exp. M,2,1000,"Caramelo energético que aumenta los Puntos de Experiencia de un Pokémon.",1,0,0,
-608,EXPCANDYL,Caramelo Exp. L,Caramelos Exp. L,2,3000,"Caramelo energético que aumenta bastante los Puntos de Experiencia de un Pokémon.",1,0,0,
-609,EXPCANDYXL,Caramelo Exp. XL,Caramelos Exp. XL,2,10000,"Caramelo energético que aumenta mucho los Puntos de Experiencia de un Pokémon.",1,0,0,
+605,EXPCANDYXS,Caramelo Experiencia XS,Caramelos Experiencia XS,2,20,"Caramelo energético que aumenta ligerísimamente los Puntos de Experiencia de un Pokémon.",1,0,0,
+606,EXPCANDYS,Caramelo Experiencia S,Caramelos Experiencia S,2,240,"Caramelo energético que aumenta ligeramente los Puntos de Experiencia de un Pokémon.",1,0,0,
+607,EXPCANDYM,Caramelo Experiencia M,Caramelos Experiencia M,2,1000,"Caramelo energético que aumenta los Puntos de Experiencia de un Pokémon.",1,0,0,
+608,EXPCANDYL,Caramelo Experiencia L,Caramelos Experiencia L,2,3000,"Caramelo energético que aumenta bastante los Puntos de Experiencia de un Pokémon.",1,0,0,
+609,EXPCANDYXL,Caramelo Experiencia XL,Caramelos Experiencia XL,2,10000,"Caramelo energético que aumenta mucho los Puntos de Experiencia de un Pokémon.",1,0,0,
 610,GALARICAWREATH,Corona Galanuez,Coronas Galanuez,1,100,"Una corona hecha de Ramas de Galanuez trenzadas. Los Slowpoke de Galar se ponen contentísimos cuando la llevan puesta.",1,0,0,
 611,ABILITYPATCH,Parche Habilidad,Parches Habilidad,1,10000,"Parche que permite cambiar la habilidad de un Pokémon a otra menos común.",1,0,0,
 612,REINSOFUNITY,Riendas Unión,Riendas Unión,8,0,"Riendas que permiten el entendimiento mutuo entre aquellos que están unidos.",5,0,6,
@@ -635,7 +635,7 @@
 637,HM08,MO08,MO08s,4,0,"Ataca con una gran embestida. Puede confundir al objetivo.",3,0,0,ROCKCLIMB
 
 638,MAXMUSHROOMS,Maxiseta,Maxisetas,2,10000,"Usala en ciertos Pokémon para que se vuelvan capaces de gigamaxizarse. Si se la toma un Pokémon que ya tenga esa capacidad, la perderá.",1,0,0,
-639,DYNAMAXCANDY,Caramelo Dynamax,Caramelos Dynamax,2,10000,"Caramelo energético que sube el nivel Dinamax de un Pokémon. Cuanto más alto sea el nivel, más aumentarán sus PS al dinamaxizarse.",1,0,0,
+639,DYNAMAXCANDY,Caramelo Dinamax,Caramelos Dinamax,2,10000,"Caramelo energético que sube el nivel Dinamax de un Pokémon. Cuanto más alto sea el nivel, más aumentarán sus PS al dinamaxizarse.",1,0,0,
 640,ZRING,Pulsera Z,Pulseras Z,8,0,"Un anillo misterioso que permite a los Pokémon usar movimientos Z. Requiere tanto la fuerza de voluntad como el poder físico del Entrenador que lo lleva.",0,0,6,
 641,DYNAMAXBAND,Maximuñequera,Maximuñequera,8,0,"Emite una luz que permite a los Pokémon alcanzar el Dynamax cuando se encuentran en un punto de poder.",0,0,6,
 642,TERAORB,Orbe Teracristal,Orbe Teracristal,8,0,"Un orbe que contiene en su interior el poder de teracristalizar. Cuando está cargado de energía, puede usarse para provocar que los Pokémon se terastalicen.",0,0,6,
@@ -675,8 +675,8 @@
 
 674,SYRUPYAPPLE,Manzana Melosa,Manzanas Melosas,1,100,"Curiosa manzana, de sabor particularmente dulce, que hace evolucionar a determinadas especies de Pokémon.",1,0,0,
 675,METALALLOY,Metal compuesto,Metales compuestos,1,2100,"Un peculiar metal que puede hacer evolucionar a determinadas especies de Pokémon. Está compuesto de muchas capas.",1,0,0,
-676,SCROLLOFDARKNESS,Manuscrito Sombras,Manuscritos Sombras,8,14000,"Curioso manuscrito que hace evolucionar a una determinada especie de Pokémon. En él se revelan los secretos del tipo Siniestro.",5,0,8
-677,SCROLLOFWATERS,Manuscrito Aguas,Manuscritos Aguas,8,14000,"Curioso manuscrito que hace evolucionar a una determinada especie de Pokémon. En él se revelan los secretos del tipo Agua.",5,0,8
+676,SCROLLOFDARKNESS,Manuscrito de las Sombras,Manuscritos Sombras,8,14000,"Curioso manuscrito que hace evolucionar a una determinada especie de Pokémon. En él se revelan los secretos del tipo Siniestro.",5,0,8
+677,SCROLLOFWATERS,Manuscrito de las Aguas,Manuscritos Aguas,8,14000,"Curioso manuscrito que hace evolucionar a una determinada especie de Pokémon. En él se revelan los secretos del tipo Agua.",5,0,8
 678,BOOSTERENERGY,Energía Potenciadora,Energías Potenciadoras,1,20000,"Tanque que contiene energía en su interior. Si lo lleva un Pokémon que posea cierta habilidad, potenciará su poder.",0,0,0,
 679,ABILITYSHIELD,Escudo Habilidad,Escudos Habilidad,1,20000,"Un escudo muy bonito de aspecto singular. Impide que otros Pokémon cambien la habilidad del Pokémon que lo lleva.",0,0,0,
 680,CLEARAMULET,Amuleto Puro,Amuletos Puros,1,20000,"Un amuleto brillante y transparente. Impide que los movimientos o habilidades de otros Pokémon reduzcan las características del Pokémon que lo lleva.",0,0,0,
@@ -707,7 +707,7 @@
 705,DECIDIUMZ,Dueyestal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Decidueye convertir su Puntada sombría en un movimiento Z.",5,0,8
 706,INCINIUMZ,Incinostal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Incineroar convertir su Lariat oscuro en un movimiento Z.",5,0,8
 707,PRIMARIUMZ,Primastal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Primarina convertir su Aria burbuja en un movimiento Z.",5,0,8
-708,EEVIUMZ,Eevium Z,,6,0,"Concentra el Poder Z en cristales que permiten a Eevee convertir su Última Baza en un movimiento Z.",5,0,8
+708,EEVIUMZ,Eeveestal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Eevee convertir su Última Baza en un movimiento Z.",5,0,8
 709,PIKANIUMZ,Pikastal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Pikachu convertir su Placaje Eléc en un movimiento Z.",5,0,8
 710,SNORLIUMZ,Snorlastal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Snorlax convertir su Gigaimpacto en un movimiento Z.",5,0,8
 711,MEWNIUMZ,Mewstal Z,,6,0,"Concentra el Poder Z en cristales que permiten a Mew convertir su Psíquico en un movimiento Z.",5,0,8
@@ -783,9 +783,9 @@
 778,DRAGONINITE,Dragonitita,Dragonititas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Dragonite en combate.",0,0,0,
 779,CHESNAUGHTITE,Chesnaughtita,Chesnaughtitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Chesnaught en combate.",0,0,0,
 780,DELPHOXITE,Delphoxita,Delphoxitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Delphox en combate.",0,0,0,
-781,GRENINJITE,Greninjita,Greninjitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Greninja en combate.",0,0,0,
+781,GRENINJITE,Greninjanita,Greninjanitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Greninja en combate.",0,0,0,
 782,MALAMARITE,Malamarita,Malamaritas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Malamar en combate.",0,0,0,
-783,HAWLUCHANITE,Hawluchita,Hawluchitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Hawlucha en combate.",0,0,0,
+783,HAWLUCHANITE,Hawluchanita,Hawluchanitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Hawlucha en combate.",0,0,0,
 784,CLEFABLITE,Clefablita,Clefablitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Clefable en combate.",0,0,0,
 785,STARMINITE,Starmita,Starmitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Starmie en combate.",0,0,0,
 786,MEGANIUMITE,Meganiumita,Meganiumitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Meganium en combate.",0,0,0,
@@ -794,7 +794,7 @@
 789,FROSLASSITE,Froslassita,Froslassitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Froslass en combate.",0,0,0,
 790,EMBOARITE,Emboarita,Emboaritas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Emboar en combate.",0,0,0,
 791,EXCADRITE,Excadrillita,Excadrillitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Excadrill en combate.",0,0,0,
-792,SCOLIPITE,Scolipedita,Scraftitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Scolipede en combate.",0,0,0,
+792,SCOLIPITE,Scolipedita,Scolipeditas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Scolipede en combate.",0,0,0,
 793,SCRAFTINITE,Scraftita,Scraftitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Scrafty en combate.",0,0,0,
 794,EELEKTROSSITE,Eelektrossita,Eelektrossitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Eelektross en combate.",0,0,0,
 795,CHANDELURITE,Chandelurita,Chandeluritas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Chandelure en combate.",0,0,0,
@@ -805,25 +805,25 @@
 800,FALINKSITE,Falinksita,Falinksitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Falinks en combate.",0,0,0,
 801,FLOETTITE,Floettita,Floettitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Floette en combate.",0,0,0,
 802,ZYGARDITE,Zygardita,Zygarditas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Zygarde en combate.",0,0,0,
-803,RAICHUITEX,Raichuita X,Raichuitas X,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Raichu en combate.",0,0,0  
-804,RAICHUITEY,Raichuita Y,Raichuitas Y,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Raichu en combate.",0,0,0  
+803,RAICHUITEX,Raichunita X,Raichunitas X,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Raichu en combate.",0,0,0  
+804,RAICHUITEY,Raichunita Y,Raichunitas Y,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Raichu en combate.",0,0,0  
 805,CHIMECHITE,Chimechita,Chimechitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Chimecho en combate.",0,0,0  
 806,ABSOLITEZ,Absolita Z,Absolitas Z,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Absol en combate.",0,0,0  
-807,STARAPTITE,Staraptita,Staraptitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Staraptor en combate.",0,0,0  
+807,STARAPTITE,Staraptorita,Staraptorita,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Staraptor en combate.",0,0,0  
 808,GARCHOMPITEZ,Garchompita Z,Garchompitas Z,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Garchomp en combate.",0,0,0  
-809,LUCARIONITEZ,Lucarionita Z,Lucarionitas Z,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Lucario en combate.",0,0,0  
+809,LUCARIONITEZ,Lucarita Z,Lucaritas Z,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Lucario en combate.",0,0,0  
 810,GOLURKITE,Golurkita,Golurkitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Golurk en combate.",0,0,0  
 811,MEOWSTICITE,Meowsticita,Meowsticitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Meowstic en combate.",0,0,0  
-812,CRABOMINITE,Crabominita,Crabominitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Crabominable en combate.",0,0,0  
-813,GOLISOPITE,Golisopita,Golisopitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Golisopod en combate.",0,0,0  
+812,CRABOMINITE,Crabominablita,Crabominablita,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Crabominable en combate.",0,0,0  
+813,GOLISOPITE,Golisopodita,Golisopodita,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Golisopod en combate.",0,0,0  
 814,MAGEARNITE,Magearnita,Magearnitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Magearna en combate.",0,0,0  
 815,SCOVILLAINITE,Scovillainita,Scovillainitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Scovillain en combate.",0,0,0  
-816,BAXCALIBRITE,Baxcalibrita,Baxcalibritas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Baxcalibur en combate.",0,0,0  
-817,TATSUGIRINITE,Tatsugirinita,Tatsugirinitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Tatsugiri en combate.",0,0,0  
+816,BAXCALIBRITE,Baxcaliburita,Baxcaliburita,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Baxcalibur en combate.",0,0,0  
+817,TATSUGIRINITE,Tatsugirita,Tatsugiritas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Tatsugiri en combate.",0,0,0  
 818,GLIMMORANITE,Glimmoranita,Glimmoranitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Glimmora en combate.",0,0,0
 819,HEATRANITE,Heatranita,Heatranitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Heatran en combate.",0,0,0  
-820,DARKRANITE,Darkranita,Darkranitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Darkrai en combate.",0,0,0  
-821,ZERAORITE,Zeraorita,Zeraoritas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Zeraora en combate.",0,0,0
+820,DARKRANITE,Darkrainita,Darkrainitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Darkrai en combate.",0,0,0  
+821,ZERAORITE,Zeraoranita,Zeraoranitas,1,0,"Una de las misteriosas Megapiedras. Permite megaevolucionar a Zeraora en combate.",0,0,0
 822,PEWTERCRUNCHIES,Rokikos,Rokikos,2,1000,"Snack crujiente típico de Ciudad Plateada. Cura todos los problemas de estado de un Pokémon.",1,1,0,
 823,BIGMALASADA,Malasada Maxi,Malasadas Maxi,2,1000,"Fritura típica de Alola que cura todos los problemas de estado de un Pokémon.",1,1,0,
 824,HEALTHMOCHI,Mochi Vigor,Mochis Vigor,2,3000,"Mochi preparado con bayas que aumenta en 10 EVs los PS de un Pokémon.",1,0,0,
